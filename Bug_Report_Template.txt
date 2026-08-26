@@ -1,0 +1,29 @@
+INTERNAL PRACTICAL EXAM — BUG REPORT
+
+Enrollment No.:
+Student Name:
+Assigned Task: Task 1 - Student Registration
+Date:
+
+Instructions:
+For each correction, briefly state the original problem, your correction,
+and why the correction was required. Keep the explanation precise.
+
+---------------------------------------------------------------------------
+Bug No. | Level | Error / Problem Found | Correction Made | Reason
+---------------------------------------------------------------------------
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.

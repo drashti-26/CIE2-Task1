@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        #student-title {
+            text-align: center;
+            color: darkblue;
+        }
+
+        #studentForm {
+            width: 450px;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .input-box {
+            margin-bottom: 12px;
+        }
+
+        #resultBox {
+            width: 450px;
+            border: 1px solid green;
+            padding: 15px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 id="student-title">Student Registration Form</h1>
+
+<form id="studentForm" onsubmit="return showStudent()">
+
+    <div class="input-box">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" required>
+    </div>
+
+    <div class="input-box">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+    </div>
+
+    <div class="input-box">
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile">
+    </div>
+
+    <div class="input-box">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+    </div>
+
+    <div class="input-box">
+        <label for="course">Course:</label>
+
+        <select id="course" required>
+            <option value="">Select Course</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+            <option value="BTech">B.Tech</option>
+        </select>
+    </div>
+
+    <div class="input-box">
+        <label>Expertise:</label>
+
+        <input type="checkbox" id="html" value="HTML"> HTML
+        <input type="checkbox" id="css" value="CSS"> CSS
+        <input type="checkbox" id="js" value="JavaScript"> JavaScript
+    </div>
+
+    <button type="submit">
+        Register Student
+    </button>
+
+</form>
+
+<div id="resultBox">
+    Registration information will appear here.
+</div>
+
+<script>
+
+function showStudent() {
+
+    var name =
+        document.getElementById("studentName").value;
+
+    let email =
+        document.getElementById("email").value;
+
+    const mobile =
+        document.getElementById("mobile").value;
+
+    let dob =
+        document.getElementById("dob").value;
+
+    var course =
+        document.getElementById("course").value;
+
+    if (name == "" || email == "") {
+    alert("Student Name and Email are required");
+    return;
+    }
+
+    var semester = prompt("Enter Current Semester");
+
+    if (semester === null || semester.trim() === "") {
+    alert("Valid semester is required");
+    return;
+}
+
+var html = document.getElementById("html");
+var css = document.getElementById("css");
+var js = document.getElementById("js");
+
+var expertise = [];
+
+if (html.checked) {
+    expertise.push(html.value);
+}
+
+if (css.checked) {
+    expertise.push(css.value);
+}
+
+if (js.checked) {
+    expertise.push(js.value);
+}
+
+if (expertise.length === 0) {
+    alert("Please select at least one expertise");
+    return;
+}
+    
+    var choice = confirm("Do you want to submit the registration?");
+
+    if (choice == false) {
+        return;
+    }
+
+    document.getElementById("resultBox").innerHTML =
+        "<h2>Student Information</h2>" +
+        "Name: " + name +
+        "<br>Email: " + email +
+        "<br>Mobile: " + mobile +
+        "<br>DOB: " + dob +
+        "<br>Course: " + course +
+        "<br>Semester: " + semester +
+        "<br>Expertise: " + expertise.join(", ");
+
+    alert("Registration successful");
+
+    return false;
+
+}
+
+</script>
+
+</body>
+</html>
