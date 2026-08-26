@@ -1,29 +1,168 @@
 INTERNAL PRACTICAL EXAM — BUG REPORT
 
-Enrollment No.:
-Student Name:
+Enrollment No.: 25CS017
+Student Name: DRASHTI GONDHA
 Assigned Task: Task 1 - Student Registration
-Date:
+Date: 26-08-2026
 
-Instructions:
-For each correction, briefly state the original problem, your correction,
-and why the correction was required. Keep the explanation precise.
 
----------------------------------------------------------------------------
-Bug No. | Level | Error / Problem Found | Correction Made | Reason
----------------------------------------------------------------------------
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
+BUG NO. 1
+------------------------------------------------------------
+Level              : Simple
+Error / Problem    : CSS background-color was missing the colon (:).
+Correction Made    : Changed background-color #f2f2f2; to
+                     background-color: #f2f2f2;
+Reason             : Correct CSS syntax is required for the
+                     background color to apply.
+------------------------------------------------------------
+
+BUG NO. 2
+------------------------------------------------------------
+Level              : Simple
+Error / Problem    : The heading used id="student-title" in HTML,
+                     but CSS used .student-title.
+Correction Made    : Changed .student-title to #student-title.
+Reason             : # is used for an ID selector.
+------------------------------------------------------------
+
+BUG NO. 3
+------------------------------------------------------------
+Level              : Simple
+Error / Problem    : The form had id="studentForm", but the CSS
+                     selector was studentForm.
+Correction Made    : Changed studentForm to #studentForm.
+Reason             : # is required to select an element by its ID.
+------------------------------------------------------------
+
+BUG NO. 4
+------------------------------------------------------------
+Level              : Simple
+Error / Problem    : The padding property was written as
+                     padding = 20px;.
+Correction Made    : Changed it to padding: 20px;.
+Reason             : CSS properties use a colon (:) between
+                     property and value.
+------------------------------------------------------------
+
+BUG NO. 5
+------------------------------------------------------------
+Level              : Simple
+Error / Problem    : The button called submitStudent(), but the
+                     JavaScript function was showStudent().
+Correction Made    : Corrected the event/function relationship
+                     using onsubmit="return showStudent()".
+Reason             : The event must call the correct JavaScript
+                     function.
+------------------------------------------------------------
+
+BUG NO. 6
+------------------------------------------------------------
+Level              : Medium
+Error / Problem    : JavaScript searched for studentName, while
+                     the input originally used id="studentname".
+Correction Made    : Changed the input ID to studentName.
+Reason             : getElementById() requires an exact,
+                     case-sensitive ID match.
+------------------------------------------------------------
+
+BUG NO. 7
+------------------------------------------------------------
+Level              : Medium
+Error / Problem    : Email and Date of Birth used type="text".
+Correction Made    : Changed Email to type="email" and Date of
+                     Birth to type="date".
+Reason             : Appropriate HTML5 controls provide suitable
+                     input handling.
+------------------------------------------------------------
+
+BUG NO. 8
+------------------------------------------------------------
+Level              : Medium
+Error / Problem    : Student Name, Email and Course could be
+                     left empty.
+Correction Made    : Added required to Student Name, Email and
+                     Course.
+Reason             : These fields must not be empty.
+------------------------------------------------------------
+
+BUG NO. 9
+------------------------------------------------------------
+Level              : Medium
+Error / Problem    : JavaScript used getElementById("result") and
+                     innerHtml, while the result area was resultBox.
+Correction Made    : Changed to getElementById("resultBox").innerHTML.
+Reason             : The correct element ID and DOM property are
+                     required to display the result.
+------------------------------------------------------------
+
+BUG NO. 10
+------------------------------------------------------------
+Level              : Medium
+Error / Problem    : The confirmation asked whether to cancel
+                     registration instead of submitting it.
+Correction Made    : Changed the message to "Do you want to submit
+                     the registration?" and stopped when Cancel
+                     was selected.
+Reason             : Registration should continue only when OK
+                     is selected.
+------------------------------------------------------------
+
+BUG NO. 11
+------------------------------------------------------------
+Level              : Difficult
+Error / Problem    : Validation used &&, so registration stopped
+                     only when both Name and Email were empty.
+Correction Made    : Changed the condition to:
+                     if (name == "" || email == "")
+Reason             : Registration must stop if either Name or
+                     Email is missing.
+------------------------------------------------------------
+
+BUG NO. 12
+------------------------------------------------------------
+Level              : Difficult
+Error / Problem    : The semester prompt did not properly handle
+                     empty input or Cancel.
+Correction Made    : Checked for semester === null or
+                     semester.trim() === ""; displayed an alert
+                     and stopped registration.
+Reason             : A valid semester is required.
+------------------------------------------------------------
+
+BUG NO. 13
+------------------------------------------------------------
+Level              : Difficult
+Error / Problem    : Selected expertise checkboxes were not
+                     processed or displayed.
+Correction Made    : Used DOM access and .checked for HTML, CSS
+                     and JavaScript, stored selected values in an
+                     array, required at least one, and displayed them.
+Reason             : At least one expertise must be selected and
+                     displayed.
+------------------------------------------------------------
+
+BUG NO. 14
+------------------------------------------------------------
+Level              : Difficult
+Error / Problem    : The submit button could reload the page after
+                     JavaScript executed, causing the result to
+                     disappear.
+Correction Made    : Used onsubmit="return showStudent()", removed
+                     onclick from the button, and returned false
+                     from showStudent().
+Reason             : Preventing default form submission keeps the
+                     result displayed.
+------------------------------------------------------------
+
+BUG NO. 15
+------------------------------------------------------------
+Level              : Difficult
+Error / Problem    : The program did not fully follow the required
+                     registration sequence.
+Correction Made    : Implemented validation, semester input and
+                     validation, expertise check, confirmation,
+                     result display, and success alert in the
+                     required order.
+Reason             : The application must follow the specified
+                     registration flow.
+------------------------------------------------------------
